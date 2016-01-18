@@ -3,7 +3,12 @@
 // setup database file;
 
 # Database connection here
-include('config/connection.php');
+
+
+
+# Database connection
+include('../config/connection.php');
+
 
 #Constants
 DEFINE('D_TEMPLATE', template);

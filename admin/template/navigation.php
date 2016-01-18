@@ -9,8 +9,7 @@
        
   <?php }  ?>
   
-  
-        <div class="container">
+
             
          
             <ul class="nav navbar-nav">
@@ -20,21 +19,36 @@
     
                 
                 
-                <?php nav_main($dbc, $pageid); ?>
+                <?php //nav_main($dbc, $pageid); ?>
                 
                 
            
          
                 <li>
-                    <a href="#">FAQ</a> 
+                    <a href="#">Dashboard</a> 
                 </li>
                 
                 <li>
-                    <a href="#">Stuff</a> 
+                    <a href="#">Pages</a> 
                 </li>
+                
+                   <li>
+                    <a href="#">Users</a> 
+                </li>
+                   
+                  <li>
+                    <a href="#">Settings</a> 
+                </li>
+                
+                  <li>
+                    <a href="logout.php">Logout</a> 
+                </li>
+                
+                
+                
             </ul>
       
-        </div>
+
     
     </nav><!---end nav=-->
     
