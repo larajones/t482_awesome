@@ -44,6 +44,10 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
 $page = data_page($dbc, $pageid);
 
 
+#User Setup
+
+$user = data_user($dbc, $_SESSION['username']);
+
 
 
 ?>

@@ -2,6 +2,23 @@
 
 
 
+function data_user($dbc, $id) {
+    
+    
+    
+$query = "SELECT * FROM users where email = '$id'";
+$results = mysqli_query($dbc, $query);
+$data = mysqli_fetch_assoc($results);
+
+$data['fullname'] = $data['first']. ' ' .$data['last'];
+$data['fullname_reverse'] = $data['last']. ' ' .$data['first']; 
+
+
+return $data;
+    
+}
+
+
 function data_setting_value($dbc, $id)
 
 {
