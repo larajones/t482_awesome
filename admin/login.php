@@ -18,7 +18,7 @@ if($_POST)
         $_SESSION['username'] = $_POST['email'];
         header('Location: index.php');
         
-    }
+    } 
     
 }
 

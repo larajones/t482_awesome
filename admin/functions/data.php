@@ -5,8 +5,17 @@
 function data_user($dbc, $id) {
     
     
+if(is_numeric($id)) {
     
-$query = "SELECT * FROM users where email = '$id'";
+    $cond = "where id = '$id'";
+} else
+
+    $cond = "where email = '$id'";
+    
+
+$query = "SELECT * FROM users $cond";
+
+
 $results = mysqli_query($dbc, $query);
 $data = mysqli_fetch_assoc($results);
 
