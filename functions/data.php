@@ -18,9 +18,20 @@ $data = mysqli_fetch_assoc($results);
 function data_page($dbc, $id)
 
 {
+    if(is_numeric($id)){
+        
+        $cond = "WHERE id = $id";
+        
+    }else{
+        
+        $cond = "WHERE slug = '$id'";
+     
+        
+    }
+    
     /*Page Setup Contain information for page using variable (get) to indentify what page
     we are on*/
-    $query = "SELECT * FROM pages WHERE id = $id";
+    $query = "SELECT * FROM pages $cond";
     
     $result = mysqli_query($dbc, $query);
     

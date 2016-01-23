@@ -31,7 +31,7 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
  
 }else {
     
-    $pageid = 1; //set to 1 or the home page
+    $pageid = 'home'; //set to 1 or the home page
     
 }
 

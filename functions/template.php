@@ -10,11 +10,9 @@ function nav_main($dbc, $pageid)
      
       
            
-    <li <?php if($pageid == $nav['id'])
+    <li <?php if($pageid == $nav['slug'])
     { echo'class = "active"';} ?>  >
-    <a href="?page= <?php echo $nav['id']; ?>"><?php echo $nav['label'] ?></a>
-                    
-    </li>
+            <a href="?page=<?php echo $nav['slug']; ?>"><?php echo $nav['label'] ?></a></li>
     
         <?php }  
 }
