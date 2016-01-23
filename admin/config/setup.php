@@ -17,6 +17,7 @@ DEFINE('D_TEMPLATE', template);
 #functions
 include('functions/data.php');
 include('functions/template.php');
+include('functions/sandbox.php');
 
 
 
@@ -42,6 +43,7 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
 
 #page setup
 $page = data_page($dbc, $pageid);
+include('config/queries.php');
 
 
 #User Setup

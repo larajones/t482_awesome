@@ -8,6 +8,7 @@
 
 	?>
 <?php  include ('config/setup.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,46 +16,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php  include ('config/css.php'); ?>
     <?php  include ('config/js.php'); ?>
+    
+    
+  <script type="text/javascript" src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: '.editor',
+    theme: 'modern',
+    plugins: [
+      'code advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'save table contextmenu directionality emoticons template paste textcolor'
+    ],
+    content_css: 'css/content.css',
+    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+  });
+  </script>
+  
+  
 </head>
-<body>
+
+
     <?php  include (D_TEMPLATE.'/navigation.php'); ?>
     <h1>Admin Dashboard</h1>
     <div class = "row">
         <div class = "col-md-3">
         
-                
-                
             <?php
-	
-	if(isset($_POST['submitted']) == 1) {
-		$title = mysqli_real_escape_string($dbc, $_POST['title']);
-		$label = mysqli_real_escape_string($dbc, $_POST['label']);
-		$header = mysqli_real_escape_string($dbc, $_POST['header']);
-		$body = mysqli_real_escape_string($dbc, $_POST['body']);
-		//if form submitted
-		$query = "INSERT INTO pages (user, slug, title, label, header, body)  VALUES ( $_POST[user], '$_POST[slug]','$title', '$label', '$header','$body')";
-		$result = mysqli_query($dbc, $query);
-		
-		if($result){
-			$message =  '<p>Page was added</p>';
-		} else {
-			$message =  '<p>Page could not be added because: '.mysqli_error($dbc);
-			$message .=  $query. '<p>';
-		}
-
-	}
-
-	?>        
+        
+        if(isset($_GET['id'])) {
+            
+            $query = "SELECT * FROM pages WHERE id = $_GET[id]";
+            $results = mysqli_query($dbc, $query);
+            
+            $opened = mysqli_fetch_assoc($results);  
+        }
+        ?>
+                
+       
             <!--get list of pages from pages table -->
             
             <div class = "list-group">
                 
-     <a class = "list-group-item" href="index.php">
-    <h4 class="list-group-item-heading"><i class = "fa fa-plus"> New Page</i></h4></a>
+
                 
-                
-                
-            
+     <a class = "list-group-item " href="index.php">
+   <i class = "fa fa-plus"> New Page</i></a>
+
             <?php 
 	$query = "SELECT * FROM pages ORDER BY title ASC";
 	$results = mysqli_query($dbc, $query);
@@ -62,40 +70,30 @@
 		$blurb = substr(strip_tags($page_list['body']), 0,160)
                 ?>
                 
-<a class = "list-group-item" href="index.php?id=<?php echo $page_list['id']?>">
+    <a class = "list-group-item <?php selected($page_list['id'], $opened['id'],'active') ?>" href="index.php?id=<?php echo $page_list['id']?>">
+    
+     
     <h4 class="list-group-item-heading"><?php  echo $page_list['title']; ?></h4>
-<!--create description using substring function -->
-<p class = "list-group-item-text"><?php  echo $blurb; ?></p></a>
+    <!--create description using substring function -->
+    <p class = "list-group-item-text"><?php  echo $blurb; ?></p></a>
                   <?php  } ?>     
             </div>
         </div>
         <div class = "col-md-9">
-            <?php
+        
+        <?php
 	
 	if(isset($message)){
 		echo $message;
 	}
-
-	?>
+?>
         
         
-        <?php
-        
-        if(isset($_GET['id'])) {
-            
-            $query = "SELECT * FROM pages WHERE id = $_GET[id]";
-            $results = mysqli_query($dbc, $query);
-            
-            $opened = mysqli_fetch_assoc($results);
-            
-        }
-        
-        
-        ?>
+   
         
         
         
-        <form action = "index.php" method = "post" role = "form">
+        <form action = "index.php?id=<?php echo $opened['id'];?>" method = "post" role = "form">
             <!--form to create pages for site -->
             <div class = "form-group">
                 <label for="title">Page Title: </label>
@@ -116,13 +114,18 @@
                 <option value = "<?php  echo $user_data['id']  ?>"
                 
                 <?php if(isset($_GET['id'])){
-                      if($user_data['id'] == $opened['user']) {echo 'selected';} 
+                     
+                      
+                      selected($user_data['id'], $opened['user'],'selected' );
                 }else {
                     
-                    if($user_data['id'] == $user['id']) {echo 'selected';} 
-                }
-                
-              ?>><?php  echo  $user_data['fullname']; ?></option>
+                 
+                    
+                     selected($user_data['id'], $user['id'],'selected' );
+                }?>>
+              
+              <?php  echo  $user_data['fullname']; ?>
+              </option>
              
              
               <?php  } ?>
@@ -148,10 +151,17 @@
               </div>
                      <div class = "form-group">
                 <label for="title">Page Body: </label>
-                <textarea class = "form-control" name = "body" id = "body" rows = "8" placeholder = "Page body"> <?php echo $opened['body'];?></textarea>
+                
+                
+                <textarea class = "form-control editor" name = "body" id = "body" rows = "8" placeholder = "Page body"> <?php echo $opened['body'];?></textarea>
               </div>
+            
+            
+            
+            
             <button type = "submit" class = "btn btn-default">Save</button>
             <input type = "hidden" name = "submitted" value = "1">
+            <input type = "hidden" name = "id" value"<?php echo $opened['id'];?>">    
         </form>    
         </div>
     </div>
