@@ -37,7 +37,7 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
 
 #page setup
 $page = data_page($dbc, $pageid);
-
+include('config/queries.php');
 
 
 
