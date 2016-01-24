@@ -6,11 +6,13 @@
 $all_vars = get_defined_vars();
 
 
-?>    
+?>
+
 
 <h1>Path Array</h1>
 
-<pre><?php print_r($path); ?></pre>
+<pre><?php print_r($path);?> </pre>
+
 
 <h1>GET</h1>
 

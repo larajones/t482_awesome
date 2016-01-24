@@ -1,4 +1,6 @@
-    <footer class="footer">
+    </div><!--end wrap-->
+    
+        <footer class="footer">
         
         
         <div class="container">
@@ -10,3 +12,14 @@
         </div>
     
     </footer>
+
+  
+    <?php 
+	
+	if($debug == 1)  {
+		include ('widgets/debug.php');
+	}
+
+	?>
+</body>
+</html>

@@ -32,17 +32,17 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
 
 { 
     
-    $pageid = $_GET['page'];
+    $page = $_GET['page'];
  
  
 }else {
     
-    $pageid = 1; //set to 1 or the home page
+    $page = "dashboard"; //set to 1 or the home page
     
 }
 
 #page setup
-$page = data_page($dbc, $pageid);
+
 include('config/queries.php');
 
 

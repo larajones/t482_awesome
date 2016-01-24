@@ -21,19 +21,19 @@
            
          
                 <li>
-                    <a href="#">Dashboard</a> 
+                    <a href="?page=dashboard">Dashboard</a> 
                 </li>
                 
                 <li>
-                    <a href="#">Pages</a> 
+                    <a href="?page=pages">Pages</a> 
                 </li>
                 
                    <li>
-                    <a href="#">Users</a> 
+                    <a href="?page=users">Users</a> 
                 </li>
                    
                   <li>
-                    <a href="#">Settings</a> 
+                    <a href="?page=settings">Settings</a> 
                 </li>
                 
         

@@ -1,5 +1,18 @@
 <?php
 
+function selected($value1, $value2, $return) {
+    
+    if($value1 == $value2){
+        
+        echo $return;
+        
+        
+    }
+    
+    
+    
+}
+
 function get_path() {
   $path = array();
   if (isset($_SERVER['REQUEST_URI'])) {
@@ -23,5 +36,10 @@ function get_path() {
   }
 return $path;
 }
+
+$path = get_path();
+
+
+
 
 ?>
