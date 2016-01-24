@@ -3,7 +3,12 @@
 // setup database file;
 
 # Database connection here
-include('config/connection.php');
+
+
+
+# Database connection
+include('../config/connection.php');
+
 
 #Constants
 DEFINE('D_TEMPLATE', template);
@@ -15,9 +20,10 @@ include('functions/template.php');
 include('functions/sandbox.php');
 
 
+
 #site setup
 $debug = data_setting_value($dbc, 'debug-status');
-$path = get_path();
+
 
 
 $site_title = 'Site Name';
@@ -31,12 +37,18 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
  
 }else {
     
-    $pageid = 'home'; //set to 1 or the home page
+    $pageid = 1; //set to 1 or the home page
     
 }
 
 #page setup
 $page = data_page($dbc, $pageid);
+include('config/queries.php');
+
+
+#User Setup
+
+$user = data_user($dbc, $_SESSION['username']);
 
 
 
