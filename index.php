@@ -21,6 +21,7 @@
     <div class="container">
         <h1><?php  echo $page['header']  ?></h1>
      <?php  echo $page['body_formatted']  ?>
+          
     <!--debug -->
     </div>
     <?php  include (D_TEMPLATE.'/footer.php'); ?>
