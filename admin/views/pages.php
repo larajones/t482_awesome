@@ -49,11 +49,6 @@
 	}
 ?>
         
-        
-   
-        
-        
-        
         <form action = "index.php?page=pages&id=<?php echo $opened['id'];?>" method = "post" role = "form">
             <!--form to create pages for site -->
             <div class = "form-group">
@@ -95,23 +90,23 @@
               </div>
                 
                   <div class = "form-group">
-                <label for="title">Page Slug: </label>
+                <label for="slug">Page Slug: </label>
                 <input class = "form-control" type = "text" name = "slug" id = "slug" value = "<?php echo $opened['slug'];?> " placeholder = "Page Slug"></input>
               </div>
         
              <div class = "form-group">
-                <label for="title">Page Label: </label>
+                <label for="label">Page Label: </label>
                 <input class = "form-control" type = "text" name = "label" id = "label" value = "<?php echo $opened['label'];?> "placeholder = "Page Label"></input>
               </div>
         
         
         
                      <div class = "form-group">
-                <label for="title">Page Header: </label>
+                <label for="header">Page Header: </label>
                 <input class = "form-control" type = "text" name = "header" id = "header" value = "<?php echo $opened['header'];?> "placeholder = "Page Header"></input>
               </div>
                      <div class = "form-group">
-                <label for="title">Page Body: </label>
+                <label for="body">Page Body: </label>
                 
                 
                 <textarea class = "form-control editor" name = "body" id = "body" rows = "8" placeholder = "Page body"> <?php echo $opened['body'];?></textarea>

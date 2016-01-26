@@ -51,78 +51,40 @@
         </div>
         <div class = "col-md-9">
         
-        <?php
-	
-	if(isset($message)){
-		echo $message;
-	}
-?>
+        <?php if(isset($message)){echo $message;}?>
         
         
         <form action = "index.php?page=users&id=<?php echo $opened['id'];?>" method = "post" role = "form">
             <!--form to create pages for site -->
+            
             <div class = "form-group">
-                <label for="title">Page Title: </label>
-                <input class = "form-control" type = "text" name = "title" id = "title" value = "<?php echo $opened['title'];?>" placeholder = "Page Title"></input>
+                <label for="first">First Name: </label>
+                <input class = "form-control" type = "text" name = "first" id = "first" value = "<?php echo $opened['first'];?>" placeholder = "First Name"></input>
               </div>
+            
+            
+                        <div class = "form-group">
+                <label for="last">Last Name: </label>
+                <input class = "form-control" type = "text" name = "last" id = "last" value = "<?php echo $opened['last'];?>" placeholder = "Last Name"></input>
+              </div>
+            
+            
+            
                 <div class = "form-group">
-                <label for="user">User</label>
-                <select class = "form-control" name = "user" id = "user">
-                    <option value = "0">No User</option>
-                    <?php
-	$query = "SELECT id FROM users ORDER BY first ASC";
-	$results = mysqli_query($dbc, $query);
-	
-        
-        while ($user_list = mysqli_fetch_assoc($results)) {
-		$user_data = data_user($dbc, $user_list['id']);
-		?>
-                <option value = "<?php  echo $user_data['id']  ?>"
-                
-                <?php if(isset($_GET['id'])){
-                     
-                      
-                      selected($user_data['id'], $opened['user'],'selected' );
-                }else {
-                    
-                 
-                    
-                     selected($user_data['id'], $user['id'],'selected' );
-                }?>>
-              
-              <?php  echo  $user_data['fullname']; ?>
-              </option>
-             
-             
-              <?php  } ?>
-                
+                <label for="status">Status</label>
+                <select class = "form-control" name = "status" id = "status">
+                   <option value = "0"     <?php if(isset($_GET['id'])){selected('0', $opened['status'],'selected' );}?> >Inactive</option>
+                    <option value = "1"   <?php if(isset($_GET['id'])){selected('1', $opened['status'],'selected' );} ?> >Active</option>
+
                 </select>
               </div>
                 
                   <div class = "form-group">
-                <label for="title">Page Slug: </label>
-                <input class = "form-control" type = "text" name = "slug" id = "slug" value = "<?php echo $opened['slug'];?> " placeholder = "Page Slug"></input>
+                <label for="password">Password: </label>
+                <input class = "form-control" type = "text" name = "password" id = "password"   placeholder = "Password"></input>
               </div>
         
-             <div class = "form-group">
-                <label for="title">Page Label: </label>
-                <input class = "form-control" type = "text" name = "label" id = "label" value = "<?php echo $opened['label'];?> "placeholder = "Page Label"></input>
-              </div>
-        
-        
-        
-                     <div class = "form-group">
-                <label for="title">Page Header: </label>
-                <input class = "form-control" type = "text" name = "header" id = "header" value = "<?php echo $opened['header'];?> "placeholder = "Page Header"></input>
-              </div>
-                     <div class = "form-group">
-                <label for="title">Page Body: </label>
-                
-                
-                <textarea class = "form-control editor" name = "body" id = "body" rows = "8" placeholder = "Page body"> <?php echo $opened['body'];?></textarea>
-              </div>
-            
-            
+             
             
             
             <button type = "submit" class = "btn btn-default">Save</button>

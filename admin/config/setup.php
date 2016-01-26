@@ -46,6 +46,7 @@ if(isset($_GET['page'])) //set $pageid to equal the value give in the URL
 include('config/queries.php');
 
 
+
 #User Setup
 
 $user = data_user($dbc, $_SESSION['username']);

@@ -6,12 +6,7 @@
         <div class="container">
             <ul class="nav navbar-nav">
                 <?php  nav_main($dbc, $path); ?>
-                <li>
-                    <a href="#">FAQ</a> 
-                </li>
-                <li>
-                    <a href="#">Stuff</a> 
-                </li>
+              
             </ul>
         </div>
     </nav><!---end nav=-->
