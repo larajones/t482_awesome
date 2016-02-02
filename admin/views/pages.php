@@ -38,7 +38,7 @@
     
     <span class =  "pull-right">
         
-        <a href = "" class = "btn btn-danger"><i class = "fa fa-trash-o"></i></a>
+        <a href = "" id = "del_<?php echo $list['id']; ?>" class = "btn btn-delete btn-danger"><i class = "fa fa-trash-o"></i></a>
         <a href = "index.php?page=pages&id=<?php echo $list['id'] ?>" class = "btn btn-default"><i class = "fa fa-chevron-right"></i></a>
     
     

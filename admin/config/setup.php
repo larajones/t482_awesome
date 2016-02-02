@@ -19,6 +19,7 @@ include('functions/data.php');
 include('functions/template.php');
 include('functions/sandbox.php');
 
+include('config/js.php');
 
 
 #site setup
