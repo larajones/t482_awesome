@@ -148,7 +148,7 @@ if(isset($_POST['submitted']) == 1) {
                 
                 $action = 'updated';
                 $query = "UPDATE settings SET id = '$_POST[id]', label = '$label', value = '$value' WHERE id = '$_POST[openedid]'";
-                $resul = mysqli_query($dbc, $query);
+                $result = mysqli_query($dbc, $query);
                 
         } 
         

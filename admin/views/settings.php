@@ -8,14 +8,14 @@
                                         
         <?php 
         
-                $q = "SELECT * FROM settings ORDER BY id ASC";
-                $r = mysqli_query($dbc, $q);
+                $query = "SELECT * FROM settings ORDER BY id ASC";
+                $results = mysqli_query($dbc, $query);
         
-                while($opened = mysqli_fetch_assoc($r)) { ?>
+                while($opened = mysqli_fetch_assoc($results)) { ?>
                         
                         <form class="form-inline" action="index.php?page=settings&id=<?php echo $opened['id']; ?>" method="post" role="form">
                                 
-                    <div id="avatar">
+                   <div id="avatar">
                             <?php if($opened['avatar'] != ''){ ?>
     
                                     <div class="avatar-container" style="background-image: url('../uploads/<?php echo $opened['avatar']; ?>')"></div>
@@ -53,7 +53,7 @@
                     <button type="submit" class="btn btn-default">Save</button>
                     <input type="hidden" name="submitted" value="1">
             
-                    <input type="hidden" name="openedid" value="<?php echo $opened['id']; ?>">
+                    <input type="hidden" name="settingid" value="<?php echo $opened['settingid']; ?>">
 
                         </form>
                         
