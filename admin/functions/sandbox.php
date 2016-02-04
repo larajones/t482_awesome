@@ -1,6 +1,6 @@
 <?php
 
-function selected($value1, $value2, $return) {
+function selected ($value1, $value2, $return) {
     
     if($value1 == $value2){
         
@@ -38,7 +38,7 @@ return $path;
 }
 
 $path = get_path();
-
+//<pre> print_r($path)</pre>;
 
 
 

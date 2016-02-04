@@ -7,7 +7,7 @@
         
         if(isset($_GET['id'])) {
             
-            $query = "SELECT * FROM pages WHERE id = $_GET[id]";
+            $query = "SELECT * FROM pages WHERE id = '$_GET[id]'";
             $results = mysqli_query($dbc, $query);
             
             $opened = mysqli_fetch_assoc($results);  
