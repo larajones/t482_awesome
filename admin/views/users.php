@@ -1,3 +1,5 @@
+
+<?php if(isset($opened['id'])){  ?>
 <script>
     
     
@@ -9,13 +11,21 @@
         
         var myDropzone = new Dropzone("#avatar-dropzone");
         
+        myDropzone.on("sucess", function(file){
+            
+            $("#avatar").load("ajax/avatar.php?id<?php echo $opened['id']; ?>");
+            
+            
+        })
+        
+        
     });
     
     
     
 </script>    
     
-    
+ <?php }?>
     
     
     <h1>Users</h1>
@@ -74,6 +84,17 @@
         <div class = "col-md-9">
         
         <?php if(isset($message)){echo $message;}?>
+        
+        <?php if($opened['avatar'] != '') {?>
+        
+        <div id = "avatar">
+            
+              <img src ="../uploads/<?php echo $opened['avatar']; ?>">
+            
+        </div>
+             
+          <?php  } ?>
+        
         
         
         <form action = "index.php?page=users&id=<?php echo $opened['id'];?>" method = "post" role = "form">
@@ -134,16 +155,16 @@
            <?php }?>
             
         </form>
+           <?php if(isset($opened['id'])){  ?>
         
-        
-        <form action="uploads.php" class = "dropzone" id="avatar-dropzone">
+        <form action="uploads.php?id=<?php echo $opened['id'];?>" class = "dropzone" id="avatar-dropzone">
             
-            
+  
             <input type = "file" name = "file">
             
         </form>
         
-        
+           <?php }?>
         
         </div>
     </div>
