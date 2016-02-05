@@ -20,22 +20,21 @@
 
 <script>
     
-  $(document).ready(function() {
-        
-        $("#console-debug").hide()
-        
-        $("#btn-debug").click(function(){
-            
-            $("#console-debug").toggle();
-            });
-        
-        
+ 	$(document).ready(function() {
+		
+		$("#console-debug").hide();
+		
+		$("#btn-debug").click(function(){
+			
+			$("#console-debug").toggle();
+			
+		});
+		
+		
 		$(".btn-delete").on("click", function() {
 			
 			var selected = $(this).attr("id");
-			
-                        //alert(selected);
-                       var pageid = selected.split("del_").join("");
+			var pageid = selected.split("del_").join("");
 			
 			var confirmed = confirm("Are you sure you want to delete this page?");
 			
@@ -43,18 +42,52 @@
 				
 				$.get("ajax/pages.php?id="+pageid);
 				
-				$("#page_"+pageid).remove();			
+				$("#page_"+pageid).remove();				
 				
 			}
 			
 
 			
-			
+			//alert(selected);
 			
 		})
-        
-        });
-   
+		
+		
+		$("#sort-nav").sortable({
+			cursor: "move",
+			update: function() {
+				var order = $(this).sortable("serialize");
+				$.get("ajax/list-sort.php", order);
+			}
+		});
+
+
+		$('.nav-form').submit(function(event){
+			
+			var navData = $(this).serializeArray();
+			var navLabel = $('input[name=label]').val();
+			var navID = $('input[name=id]').val();
+		
+			
+			$.ajax({
+				
+				url: "ajax/navigation.php",
+				type: "POST",
+				data: navData
+				
+			}).done(function(){
+				
+				$("#label_"+navID).html(navLabel);
+				
+			});
+			
+			
+			event.preventDefault();
+			
+		});
+		
+		
+	}); // END document.ready();
     
     
 </script>

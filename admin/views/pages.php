@@ -31,7 +31,7 @@
 		$blurb = substr(strip_tags($list['body']), 0,160)
                 ?>
                 
-    <div class = "list-group-item <?php selected($list['id'], $opened['id'],'active') ?>" 
+    <div id="page_<?php echo $list['id']; ?>" class = "list-group-item <?php selected($list['id'], $opened['id'],'active') ?>" 
     
      
     <h4 class="list-group-item-heading"><?php  echo $list['title']; ?>
@@ -58,9 +58,7 @@
         
         <?php
 	
-	if(isset($message)){
-		echo $message;
-	}
+	if(isset($message)){echo $message;}
 ?>
         
         <form action = "index.php?page=pages&id=<?php echo $opened['id'];?>" method = "post" role = "form">
