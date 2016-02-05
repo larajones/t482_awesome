@@ -1,3 +1,23 @@
+<script>
+    
+    
+    
+    $(document).ready(function() {
+        
+        
+        Dropzone.autoDiscover = false;
+        
+        var myDropzone = new Dropzone("#avatar-dropzone");
+        
+    });
+    
+    
+    
+</script>    
+    
+    
+    
+    
     <h1>Users</h1>
   
     <div class = "row">
@@ -113,7 +133,18 @@
               
            <?php }?>
             
-        </form>    
+        </form>
+        
+        
+        <form action="uploads.php" class = "dropzone" id="avatar-dropzone">
+            
+            
+            <input type = "file" name = "file">
+            
+        </form>
+        
+        
+        
         </div>
     </div>
     

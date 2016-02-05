@@ -13,10 +13,13 @@
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
     
-    <script>
-      
-      src = "js/tinymce/tinymce.min.js"
+        <script src = "js/dropzone.js"
     </script>
+
+    
+    <script  src = "js/tinymce/tinymce.min.js"
+    </script>
+
 
 <script>
     
