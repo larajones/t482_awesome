@@ -2,32 +2,6 @@
 
 
 
-function data_user($dbc, $id) {
-    
-    
-if(is_numeric($id)) {
-    
-    $cond = "where id = '$id'";
-} else
-
-    $cond = "where email = '$id'";
-    
-
-$query = "SELECT * FROM users $cond";
-
-
-$results = mysqli_query($dbc, $query);
-$data = mysqli_fetch_assoc($results);
-
-$data['fullname'] = $data['first']. ' ' .$data['last'];
-$data['fullname_reverse'] = $data['last']. ' ' .$data['first']; 
-
-
-return $data;
-    
-}
-
-
 function data_setting_value($dbc, $id)
 
 {
@@ -44,9 +18,20 @@ $data = mysqli_fetch_assoc($results);
 function data_page($dbc, $id)
 
 {
+    if(is_numeric($id)){
+        
+        $cond = "WHERE id = $id";
+        
+    }else{
+        
+        $cond = "WHERE slug = '$id'";
+     
+        
+    }
+    
     /*Page Setup Contain information for page using variable (get) to indentify what page
     we are on*/
-    $query = "SELECT * FROM pages WHERE id = '$id'";
+    $query = "SELECT * FROM pages $cond";
     
     $result = mysqli_query($dbc, $query);
     

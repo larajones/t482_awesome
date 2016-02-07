@@ -105,6 +105,11 @@ if(isset($_GET['id'])) { $opened = data_user($dbc, $_GET['id']); }
 
 break;
 
+if(isset($_GET['id'])) {$opened = data_page($dbc, $_GET['id']); }
+ 
+    break;
+
+
 case 'navigation':
 
 if(isset($_POST['submitted']) == 1) {
@@ -166,13 +171,101 @@ if(isset($_POST['submitted']) == 1) {
 }
     
     break;
+    
+    
+     case 'products' :
+   
+if(isset($_POST['submitted']) == 1) {
+    
+    $ProductName = mysqli_real_escape_string($dbc, $_POST['ProductName']); 
+    $ProductDescription = mysqli_real_escape_string($dbc, $_POST['ProductDescription']);  
+    $CategoryID = mysqli_real_escape_string($dbc, $_POST['CategoryID']); 
+    $SupplierID = mysqli_real_escape_string($dbc, $_POST['SupplierID']);  
+    $InitialCost = mysqli_real_escape_string($dbc, $_POST['InitialCost']); 
+    $DateArrived = mysqli_real_escape_string($dbc, $_POST['DateArrived']);  
+    
+    
+    if(isset($_POST['id']) != '') {
+            
+            $action = 'updated';
+                $query = "UPDATE products SET ProductName = '$ProductName', ProductDesciption = '$ProductDescription', CategoryID = '$CategoryID', SupplierID = '$SupplierID', InitialCost = '$InitialCost', DateArrived = '$DateArrived' WHERE id = $_GET[id]";
+            $result = mysqli_query($dbc, $query);
+            
+    } else {
+            
+            $action = 'added';
+            
+                $query = "INSERT INTO Products (ProductName, ProductDescription, CategoryID, SupplierID, InitialCost, DateArrived) VALUES ('$ProductName', '$ProductDescription', '$CategoryID', '$SupplierID', '$InitialCost', '$DateArrived')";
+            
+           
+                    $result = mysqli_query($dbc, $query);
+           
+    if($result){
+            
+            $message = '<p class="alert alert-success">Product was '.$action.'!</p>';
+            
+    } else {
+            
+            $message = '<p class="alert alert-danger">Product could not be '.$action.' because: '.mysqli_error($dbc);
+           
+            
+                            
+}
+
+if(isset($_GET['id'])) { $opened = data_product($dbc, $_GET['id']); }
+}
+                                
+}
+    
+    break;
+  
+     case 'suppliers' :
+   
+if(isset($_POST['submitted']) == 1) {
+    
+    $SupplierName = mysqli_real_escape_string($dbc, $_POST['SupplierName']); 
+    $SupplierEmail = mysqli_real_escape_string($dbc, $_POST['SupplierEmail']);  
+    $SupplierPhone = mysqli_real_escape_string($dbc, $_POST['SupplierPhone']); 
+    $SupplierID = mysqli_real_escape_string($dbc, $_POST['SupplierID']);  
+    $AddressID = mysqli_real_escape_string($dbc, $_POST['AddressID']); 
+    
+    if(isset($_POST['id']) != '') {
+            
+            $action = 'updated';
+                $query = "UPDATE  SET Suppliername = '$SupplierName', SupplierName = '$SupplierName', SupplierEmail = '$SupplierEmail', SupplierPhone = '$SupplierPhone', AddressID = '$AddressID' WHERE id = $_GET[id]";
+            $result = mysqli_query($dbc, $query);
+            
+    } else {
+            
+            $action = 'added';
+            
+                $query = "INSERT INTO Suppliers (SupplierName, SupplierEmail, SupplierPhone, AddressID) VALUES ('$SupplierName', '$SupplierEmail', '$SupplierPhone', '$AddressID')";
+            
+           
+                    $result = mysqli_query($dbc, $query);
+           
+    if($result){
+            
+            $message = '<p class="alert alert-success">Vendor was '.$action.'!</p>';
+            
+    } else {
+            
+            $message = '<p class="alert alert-danger">Vendor could not be '.$action.' because: '.mysqli_error($dbc);
+           
+            
+                            
+}
+
+if(isset($_GET['id'])) { $opened = data_supplier($dbc, $_GET['id']); }
+}
+                                
+}
+    
+    break;
  
     default:
         
     break;
         
 }
-
-
-
 ?>
