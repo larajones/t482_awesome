@@ -32,6 +32,10 @@
                     <a href="?page=users">Users</a> 
                 </li>
                    
+                      <li>
+                    <a href="?page=navigation">Navigation</a> 
+                </li>
+                   
                   <li>
                     <a href="?page=settings">Settings</a> 
                 </li>
