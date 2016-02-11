@@ -1,4 +1,4 @@
- <h1>suppliers</h1>
+ <h1>vendors</h1>
 
         <div class = "col-md-9">
         
@@ -10,25 +10,25 @@
             <!--form to create pages for site -->
             
             <div class = "form-group">
-                <label for="SupplierName">Supplier Name: </label>
-                <input class = "form-control" type = "text" name = "SupplierName" id = "SupplierName" value = "<?php echo $opened['SupplierName'];?>" placeholder = "SupplierName Name" autocomplete = "off"></input>
+                <label for="SupplierName">Vendor Name: </label>
+                <input class = "form-control" type = "text" name = "SupplierName" id = "SupplierName" value = "<?php echo $opened['SupplierName'];?>" placeholder = "Vendor Name" autocomplete = "off"></input>
               </div>
             
             
                         <div class = "form-group">
-                <label for="SupplierEmail">Supplier Email: </label>
-                <input class = "form-control" type = "text" name = "SupplierEmail" id = "SupplierEmail" value = "<?php echo $opened['SupplierEmail'];?>" placeholder = "SupplierEmail" autocomplete = "off"></input>
+                <label for="SupplierEmail">Vendor Email: </label>
+                <input class = "form-control" type = "text" name = "SupplierEmail" id = "SupplierEmail" value = "<?php echo $opened['SupplierEmail'];?>" placeholder = "Vendor Email" autocomplete = "off"></input>
               </div>
         
         
                 <div class = "form-group">
-                <label for="SupplierPhone">SupplierPhone</label>
-                <input class = "form-control" type = "text" name = "SupplierPhone" id = "SupplierPhone" value = "<?php echo $opened['SupplierPhone'];?>" placeholder = "SupplierPhone Address" autocomplete = "off"></input>
+                <label for="SupplierPhone">Vendor Phone:</label>
+                <input class = "form-control" type = "text" name = "SupplierPhone" id = "SupplierPhone" value = "<?php echo $opened['SupplierPhone'];?>" placeholder = "Vendor Phone" autocomplete = "off"></input>
               </div>
         
                 <div class = "form-group">
-                <label for="AddressID">AddressID</label>
-                <input class = "form-control" type = "text" name = "AddressID" id = "AddressID" value = "<?php echo $opened['AddressID'];?>" placeholder = "AddressID Address" autocomplete = "off"></input>
+                <label for="AddressID">Address:</label>
+                <input class = "form-control" type = "text" name = "AddressID" id = "AddressID" value = "<?php echo $opened['AddressID'];?>" placeholder = "Vendor Address ID" autocomplete = "off"></input>
               </div>
             
             <button type = "submit" class = "btn btn-default">Save</button>

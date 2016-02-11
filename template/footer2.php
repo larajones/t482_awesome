@@ -23,10 +23,10 @@
 					<h3> Shop </h3>
 					
 					<ul>
-						<li><a href="#">Dresses</a></li>
-						<li><a href="#">Tops</a></li>
-						<li><a href="#"> Pants </a></li>
-						<li><a href="#"> Accessories </a></li>
+						<li><a href="products.php">Dresses</a></li>
+						<li><a href="products.php">Tops</a></li>
+						<li><a href="products.php"> Pants </a></li>
+						<li><a href="products.php"> Accessories </a></li>
 					</ul>
 					
 				</div>

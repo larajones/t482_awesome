@@ -20,6 +20,8 @@
     <?php  include (D_TEMPLATE.'/navigation2.php'); ?>
     <div class="container">
 
+<div class="clearfix1"></div>
+
 	<div class="row">
 		
 	  <div class="col-sm-1"></div>

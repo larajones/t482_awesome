@@ -142,7 +142,7 @@
                      <div class = "form-group">
                 <label for="passwordv">Verify Password: </label>
                 <input class = "form-control" type = "password"
-                       name = "passwordv" id = "passwordv" Placeholder = "Veryify Password" autocomplete = "off"></input>
+                       name = "passwordv" id = "passwordv" Placeholder = "Verify Password" autocomplete = "off"></input>
               </div>
         
             

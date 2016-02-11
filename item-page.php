@@ -17,7 +17,7 @@
 <body>
     
     
-    <?php  include (D_TEMPLATE.'/navigation.php'); ?>
+    <?php  include (D_TEMPLATE.'/navigation2.php'); ?>
     
     
     <div class="container">

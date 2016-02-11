@@ -1,8 +1,8 @@
 <?php
-
 //javaScript files
 
 ?>
+    
     <script src="//code.jquery.com/jquery-1.12.0.min.js">
     </script><!-- jQuery UI -->
 
@@ -12,6 +12,11 @@
     <script src=
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
+
+	<!-- use jssor.slider.debug.js instead for debug -->
+	<script src=
+	"https://cdn.jsdelivr.net/jssor.slider/20.0.0/jssor.slider.mini.js">
+	</script>
 
 <script>
     
@@ -28,3 +33,7 @@
     
     
 </script>
+
+
+<script src="responsiveslides.min.js"></script>
+

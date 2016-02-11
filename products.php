@@ -17,9 +17,16 @@
 <body>
     
     
-    <?php  include (D_TEMPLATE.'/navigation.php'); ?>
+    <?php  include (D_TEMPLATE.'/navigation2.php'); ?>
+    
+	
+    <?php  include ('template/sidebar2.php'); ?>
+    
+    <?php  include ('template/products2.php'); ?>
     
     
+    
+<!--    
     <div class="container">
     	
     	<?php  include ('widgets/breadcrumbs.php'); ?>
@@ -41,7 +48,7 @@
 	  
 	</div>
 
-
+-->
 
           
     <!--debug -->

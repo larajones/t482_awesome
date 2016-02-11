@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php  include ('config/css.php'); ?>
     <?php  include ('config/js.php'); ?>
+	
+	<link rel="stylesheet" type="text/css" href="config/animate.css">
+	<link href="config/settings.css" rel="stylesheet">
+	<!-- Countdown -->
+		<link href="css/jquery.countdown.css" rel="stylesheet"> 
+	
 </head>
 
 
@@ -18,145 +24,69 @@
     
     
     <?php  include (D_TEMPLATE.'/navigation2.php'); ?>
-    <div class="container">
-          
-		
-<!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <p>Slider Here</p>
-        </header>
+    <div class="clearfix"></div>
+    
+    <?php  include ('widgets/slider.php'); ?>
 
-        <hr>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>New Items</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<div class="container">
         
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Most Popular</h3>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Page Features -->
-        <div class="row text-center">
+	<div class="row">
+		<div class="cover-card col-sm-12" style="background: url(images/dressindex.jpg) no-repeat center top;background-size:cover;">
+			<p></p>
+		</div>
+		
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<div class="cover-card col-sm-4" style="background: url(images/topindex.jpg) no-repeat center top;background-size:cover;">
+			<p></p>
+		</div>
+		<div class="cover-card col-sm-4" style="background: url(images/pantsindex.jpg) no-repeat center top;background-size:cover;">
+			<p></p>
+		</div>
+		<div class="cover-card col-sm-4" style="background: url(images/accessoriesindex.jpg) no-repeat center top;background-size:cover;">
+			<p>	</p>
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+	</div>
+	
+	
+	
+	<div class="clearfix"></div>
+       		<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+		<script src="js/jquery.themepunch.tools.min.js"></script>
+		<script src="js/jquery.themepunch.revolution.min.js"></script>
+		
+       	<script>
+			/* JS for SLIDER REVOLUTION */
+			jQuery(document).ready(function() {
+			   jQuery('.tp-banner').revolution(
+				{
+					delay: 9000,
+					startheight: 450,
+					
+					hideThumbs: 10,
+					
+					navigationType:"none",	
+					
+					
+					hideArrowsOnMobile:"on",
+					
+					touchenabled:"on",
+					onHoverStop:"on",
+					
+					navOffsetHorizontal:0,
+					navOffsetVertical:20,
+					
+					stopAtSlide:-1,
+					stopAfterLoops:-1,
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-      
-       </div>
+					shadow:0,
+					
+					fullWidth:"on",
+					fullScreen:"off"
+				});
+			});
+	</script>
           
  <!--debug -->
     </div>
