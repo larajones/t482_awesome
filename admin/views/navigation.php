@@ -1,8 +1,37 @@
 <h1>Navigation</h1>
 
 <div class="row">
-	
-	<div class="col-md-12">
+    
+    
+    
+    <div class="col-md-3">
+        
+        <ul id ="sort-nav" class = "list-group">
+            
+            
+            <?php
+            
+            
+            $q = "SELECT * from navigation ORDER BY position ASC";
+            $r = mysqli_query($dbc, $q);
+            
+            while($list = mysqli_fetch_assoc($r)) { ?>
+                
+            
+            <li id = "list_<?php echo $list['id'] ?>" class = "list-group-item"><?php echo $list['label'];?></li>
+   
+    
+   
+                
+          <?php  } ?>
+            
+        </ul>
+
+    </div>
+    
+    
+
+	<div class="col-md-9">
 		
 		<?php if(isset($message)) { echo $message; } ?>		
 						
@@ -39,8 +68,8 @@
                             
             <div class="form-group">
                                     
-            <label class="sr-only" for="value">URL:</label>
-            <input class="form-control" type="text" name="value" id="value" value="<?php echo $opened['url']; ?>" placeholder="Value" autocomplete="off">
+            <label class="sr-only" for="url">URL:</label>
+            <input class="form-control" type="text" name="url" id="url" value="<?php echo $opened['url']; ?>" placeholder="URL" autocomplete="off">
                                     
             </div>
             

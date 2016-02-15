@@ -8,6 +8,13 @@
 
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js">
     </script><!-- Latest compiled and minified JavaScript -->
+    
+    
+    
+ 
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
     <script src=
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
@@ -56,9 +63,30 @@
 		})
 		
 
-		
+		  $( "#sort-nav" ).sortable({
+                    
+                    cursor: "move",
+                    update: function(){
+                      
+                      
+                      var order = $(this).sortable("serialize");
+                      
+                      
+                      $.get("ajax/list-sort.php", order);
+                    }
+                    
+                    
+                    
+                    });
+                  
+                  
+                  
 		
 	}); // END document.ready();
+    
+    
+    
+    
     
     
 </script>

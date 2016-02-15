@@ -26,6 +26,8 @@
     "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     rel="stylesheet"><!-- jQuery -->
 
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <style>
     /* Sticky footer styles
     -------------------------------------------------- */
