@@ -70,14 +70,36 @@
                       
                       
                       var order = $(this).sortable("serialize");
-                      
-                      
                       $.get("ajax/list-sort.php", order);
                     }
                     
-                    
-                    
                     });
+                  
+                  
+                  $('nav.form').submit(function(event){
+                    
+                    
+                    var navData = $(this).serializeArray();
+                    var navLabel = $('input[name=label]').val();    
+                    var navID = $('input[name=id]').val();    
+                           
+                      
+                         $.ajax({
+                      
+                      url: "ajax/navigation.php",
+                      type: "POST",
+                      data: navData
+                      
+                      }).done(function(){
+                          
+                        $("#label_"+navID).html(navLabel);  
+                          
+                          });
+                
+                                    
+                    event.preventDefault();
+                    });
+                  
                   
                   
                   

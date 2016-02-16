@@ -120,7 +120,7 @@ if(isset($_POST['submitted']) == 1) {
     if(isset($_POST['id']) != '') {
             
             $action = 'updated';
-            $query = "UPDATE navigation SET id = '$_POST[id]', label = '$label', url = '$url', position = $_POST[position], status = $_POST[status] WHERE id = '$_POST[openedid]'";
+            $query = "UPDATE navigation SET id = '$_POST[id]', label = '$label', url = '$url', status = $_POST[status] WHERE id = '$_POST[openedid]'";
             $result = mysqli_query($dbc, $query);
             
     } 
